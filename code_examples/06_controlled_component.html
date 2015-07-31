@@ -1,0 +1,70 @@
+<!-- DOCTYPE HTML -->
+<html>
+    <head>
+        <title>Refs and findDOMNode</title>
+    </head>
+    <body>
+        <div id="content"></div>
+        <script src="https://fb.me/react-with-addons-0.13.3.js"></script>
+        <script src="http://fb.me/JSXTransformer-0.12.1.js"></script>
+        <script type="text/jsx">
+
+        	var List = React.createClass({
+        		render: function(){
+        			var messages = this.props.messages.map(function(message,index){
+        				return <li key={index}>{message}</li>
+        			});
+        			return (
+        				<ul>
+        					{messages}
+        				</ul>
+        			);
+        		}
+        	});
+
+			var TodoApp = React.createClass({
+				getInitialState: function(){
+					return {
+						message: '',
+						messages: []
+					}
+				},
+
+				handleChange: function(event){
+					this.setState({
+						message: event.target.value
+					});
+				},
+
+				handleClick: function(message){
+					this.setState({
+						messages: this.state.messages.concat(this.state.message),
+						message: ''
+					});
+				},
+
+				render: function(){
+					return (
+						<div>
+							<h1> Welcome to the ToDo app!</h1>
+							<List messages={this.state.messages}/>
+							<input 
+								type="text"
+								ref="message"
+								value={this.state.message}
+								onChange={this.handleChange} />
+							<input 
+								type="submit"
+								value="Add to list!" 
+								onClick={this.handleClick} />
+						</div>
+					);
+				}
+			});
+
+			React.render(<TodoApp />,  document.getElementById("content"));
+
+
+
+        </script>
+</html>

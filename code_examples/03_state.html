@@ -1,0 +1,47 @@
+<!-- DOCTYPE HTML -->
+<html>
+    <head>
+        <title>Button app</title>
+        <link rel="stylesheet" type="text/css" href="src/style.css">
+    </head>
+    <body>
+        <div id="content"></div>
+        <script src="https://fb.me/react-with-addons-0.13.3.js"></script>
+        <script src="http://fb.me/JSXTransformer-0.12.1.js"></script>
+        <script type="text/jsx">
+
+			var Main = React.createClass({
+
+				getInitialState: function(){
+					return {
+						active: true
+					}
+				},
+
+				handleClick: function(){
+					this.setState({
+						active: !this.state.active
+					});
+				},
+				
+				render: function(){
+					var buttonSwitch = this.state.active ? "On" : "Off";
+
+					return (
+						<div>
+							<h1> Welcome to my button app!</h1>
+							<input type="submit" onClick={this.handleClick} />
+							<p>{buttonSwitch}</p>
+						</div>
+					);
+				}
+			});
+
+			React.render(<Main />,  document.getElementById("content"));
+
+        </script>
+
+
+
+
+</html>

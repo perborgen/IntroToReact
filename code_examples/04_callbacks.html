@@ -1,0 +1,55 @@
+<!-- DOCTYPE HTML -->
+<html>
+    <head>
+        <title>Button app</title>
+    </head>
+    <body>
+        <div id="content"></div>
+        <script src="https://fb.me/react-with-addons-0.13.3.js"></script>
+        <script src="http://fb.me/JSXTransformer-0.12.1.js"></script>
+        <script type="text/jsx">
+
+			var ButtonForm = React.createClass({
+				render: function(){
+					return (
+						<div>
+							<input type="submit" onClick={this.props.onUserClick} />
+							<h3>You have pressed the button {this.props.counter} times!</h3>
+						</div>
+					);
+				}
+			});
+
+			var Main = React.createClass({
+
+				getInitialState: function(){
+					return {
+						counter: 0
+					}
+				},
+
+				onUserClick: function(){
+					var newCount = this.state.counter += 1;
+					this.setState({
+						counter: newCount
+					});
+				},
+
+				render: function(){
+					return (
+						<div>
+							<h1> Welcome to the counter app!</h1>
+							<ButtonForm counter={this.state.counter} onUserClick={this.onUserClick} />
+						</div>
+					);
+				}
+			});
+
+
+
+			React.render(<Main />,  document.getElementById("content"));
+
+
+
+        </script>
+</html>

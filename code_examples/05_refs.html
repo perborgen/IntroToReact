@@ -1,0 +1,47 @@
+<!-- DOCTYPE HTML -->
+<html>
+    <head>
+        <title>Refs and findDOMNode</title>
+    </head>
+    <body>
+        <div id="content"></div>
+        <script src="https://fb.me/react-with-addons-0.13.3.js"></script>
+        <script src="http://fb.me/JSXTransformer-0.12.1.js"></script>
+        <script type="text/jsx">
+
+			var ButtonForm = React.createClass({
+				focusOnField: function(){
+					React.findDOMNode(this.refs.message).focus();
+				},
+				render: function(){
+					return (
+						<div>
+							<input 
+								type="text"
+								ref="message" />
+							<input 
+								type="submit"
+								value="Focus!" 
+								onClick={this.focusOnField} />
+						</div>
+					);
+				}
+			});
+
+			var Main = React.createClass({
+				render: function(){
+					return (
+						<div>
+							<h1> Welcome to the focus app!</h1>
+							<ButtonForm onUserClick={this.onUserClick} />
+						</div>
+					);
+				}
+			});
+
+			React.render(<Main />,  document.getElementById("content"));
+
+
+
+        </script>
+</html>
