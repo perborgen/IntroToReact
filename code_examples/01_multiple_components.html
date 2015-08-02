@@ -1,0 +1,39 @@
+<!-- DOCTYPE HTML -->
+<html>
+    <head>
+        <title>Button app</title>
+        <link rel="stylesheet" type="text/css" href="src/style.css">
+    </head>
+    <body>
+        <div id="content"></div>
+        <script src="https://fb.me/react-with-addons-0.13.3.js"></script>
+        <script src="http://fb.me/JSXTransformer-0.12.1.js"></script>
+        <script type="text/jsx">
+			
+			var ButtonForm = React.createClass({
+				render: function(){
+					return (
+						<div>
+							<h3>Click the button</h3>
+							<input type="submit" />
+						</div>
+					);
+				}
+			});
+
+			var Main = React.createClass({
+				render: function(){
+					return (
+						<div>
+							<h1> Welcome to my button app!</h1>
+							<ButtonForm />
+						</div>
+					);
+				}
+			});
+			
+			React.render(<Main />,  document.getElementById("content"));
+        
+
+        </script>
+</html>
