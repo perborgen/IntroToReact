@@ -1,0 +1,81 @@
+<!-- DOCTYPE HTML -->
+<html>
+    <head>
+        <title>Controlled components</title>
+    </head>
+    <body>
+        <div id="content"></div>
+        <script src="https://fb.me/react-with-addons-0.13.3.js"></script>
+        <script src="http://fb.me/JSXTransformer-0.12.1.js"></script>
+        <script type="text/jsx">
+
+
+
+			var App = React.createClass({
+				getInitialState: function(){
+					console.log(this.props.name, 'getInitialState');
+					return {
+						text: '',
+						render: true
+					}
+				},
+				getDefaultProps: function(){
+					console.log('getDefaultProps');
+					return {
+						name: "Per"
+					}
+				},
+
+				handleChange: function(event){
+					this.setState({
+						text: event.target.value
+					})
+				},
+
+				componentWillMount: function() {
+				  	console.log(this.props.name, 'componentWillMount');
+				},
+
+				componentDidMount: function() {
+				    console.log(this.props.name, 'componentDidMount');
+				},
+
+				componentWillReceiveProps: function() {
+				    console.log(this.props.name, 'componentWillReceiveProps');
+				},
+
+				shouldComponentUpdate: function() {
+				    console.log(this.props.name, 'shouldComponentUpdate');
+				    return true;
+				},
+
+				componentWillUpdate: function() {
+				    console.log(this.props.name, 'componentWillUpdate');
+				},
+
+				componentDidUpdate: function() {
+				    console.log(this.props.name, 'componentDidUpdate');
+				},
+
+				componentWillUnmount: function() {
+				    console.log(this.props.name, 'componentWillUnmount');
+				},
+
+				render: function(){
+					console.log(this.props.name, 'render');
+					return (
+						<div>
+							<h1>Lifecycle!</h1>
+							<p>{this.props.name}</p>
+							<input type="text" onClick={this.handleChange} />
+						</div>
+					);
+				}
+			});
+
+		React.render(<App />,  document.getElementById("content"));
+
+
+
+        </script>
+</html>

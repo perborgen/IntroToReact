@@ -1,0 +1,69 @@
+<!-- DOCTYPE HTML -->
+<html>
+    <head>
+        <title>Todo app</title>
+    </head>
+    <body>
+        <div id="content"></div>
+        <script src="https://fb.me/react-with-addons-0.13.3.js"></script>
+        <script src="http://fb.me/JSXTransformer-0.12.1.js"></script>
+        <script type="text/jsx">
+
+        	var List = React.createClass({
+        		render: function(){
+        			var todos = this.props.todos.map(function(todo,index){
+        				return <li key={index}>{todo}</li>
+        			});
+        			return (
+        				<ul>
+        					{todos}
+        				</ul>
+        			);
+        		}
+        	});
+
+			var TodoApp = React.createClass({
+				getInitialState: function(){
+					return {
+						text: '',
+						todos: []
+					}
+				},
+
+				handleChange: function(event){
+					this.setState({
+						text: event.target.value
+					});
+				},
+
+				handleClick: function(){
+					this.setState({
+						todos: this.state.todos.concat(this.state.text),
+						text: ''
+					});
+				},
+
+				render: function(){
+					return (
+						<div>
+							<h1> Welcome to the ToDo app!</h1>
+							<List todos={this.state.todos}/>
+							<input 
+								type="text"
+								value={this.state.text}
+								onChange={this.handleChange} />
+							<input 
+								type="submit"
+								value="Add to list!" 
+								onClick={this.handleClick} />
+						</div>
+					);
+				}
+			});
+
+			React.render(<TodoApp />,  document.getElementById("content"));
+
+
+
+        </script>
+</html>
