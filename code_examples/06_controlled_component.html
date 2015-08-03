@@ -11,12 +11,12 @@
 
         	var List = React.createClass({
         		render: function(){
-        			var messages = this.props.messages.map(function(message,index){
-        				return <li key={index}>{message}</li>
+        			var todos = this.props.todos.map(function(todo,index){
+        				return <li key={index}>{todo}</li>
         			});
         			return (
         				<ul>
-        					{messages}
+        					{todos}
         				</ul>
         			);
         		}
@@ -25,21 +25,21 @@
 			var TodoApp = React.createClass({
 				getInitialState: function(){
 					return {
-						message: '',
-						messages: []
+						text: '',
+						todos: []
 					}
 				},
 
 				handleChange: function(event){
 					this.setState({
-						message: event.target.value
+						text: event.target.value
 					});
 				},
 
-				handleClick: function(message){
+				handleClick: function(){
 					this.setState({
-						messages: this.state.messages.concat(this.state.message),
-						message: ''
+						todos: this.state.todos.concat(this.state.text),
+						text: ''
 					});
 				},
 
@@ -47,11 +47,10 @@
 					return (
 						<div>
 							<h1> Welcome to the ToDo app!</h1>
-							<List messages={this.state.messages}/>
+							<List todos={this.state.todos}/>
 							<input 
 								type="text"
-								ref="message"
-								value={this.state.message}
+								value={this.state.text}
 								onChange={this.handleChange} />
 							<input 
 								type="submit"
