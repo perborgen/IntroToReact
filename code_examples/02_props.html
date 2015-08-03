@@ -2,16 +2,15 @@
 <html>
     <head>
         <title>Button app</title>
-        <link rel="stylesheet" type="text/css" href="src/style.css">
     </head>
     <body>
         <div id="content"></div>
         <script src="https://fb.me/react-with-addons-0.13.3.js"></script>
         <script src="http://fb.me/JSXTransformer-0.12.1.js"></script>
         <script type="text/jsx">
+
 			var ButtonForm = React.createClass({
 				render: function(){
-					var clicked = this.props.clicked ? "Active" : "Not active";
 					return (
 						<div>
 							<h3>{this.props.text}</h3>
@@ -21,26 +20,20 @@
 				}
 			});
 
-			var Main = React.createClass({
-
-				getInitialState: function(){
-					return {
-						clicked: true
-					}
-				},
-
+			var App = React.createClass({
 				render: function(){
-					console.log(this);
 					return (
 						<div>
 							<h1> Welcome to my button app!</h1>
-							<ButtonForm text={this.props.text} clicked={this.state.clicked} />
+							<ButtonForm text={this.props.text} />
 						</div>
 					);
 				}
 			});
 			
 			var buttonText = "Click the damn button";
-			React.render(<Main text={buttonText} />,  document.getElementById("content"));
+
+			React.render(<App text={buttonText} />,  document.getElementById("content"));
+
         </script>
 </html>
