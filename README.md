@@ -20,5 +20,5 @@
 
 6:30 - 7:30 : Continue on Exercise 2    
 7:30 - 7:45 : Pizza + beer  
-7:45 - 8:15 : Gulp/Browserify lecture
+7:45 - 8:15 : Gulp/Browserify lecture  
 8:00 - 9:30 : Exercise 3
