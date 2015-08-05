@@ -20,7 +20,7 @@ With some browsers (Safari, Firefox) you can run the app by simply dragging *ind
 
 Before you start coding, you'll want to break the UI into components. Check out this tutorial on how to break you UI into components.
 
-(ui.png)
+![text](ui.png)
 
 ## Fetch the users inputs
 
