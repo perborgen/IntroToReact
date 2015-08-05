@@ -10,27 +10,29 @@ Based on this, you'll show the user the most relevant products from iTunes.
 
 To get started, clone this repo. We've linked to the jQuery CDN for you in the HTML file. Your React components ought to be added in main.js.
 
-## 1. Break the UI into components
+## Breaking the UI into components
 
 Check out this tutorial on how to break you UI into components
 
-## 2. Code a static version
+## Fetch the users inputs
 
-Remember to add propTypes to verify that the props the components are getting are correct.
+Use *refs* and *React.findDOMNode* to get the users inputs. Check a code sample using this technique here.
 
-## 3. Fetch the users inputs
+## Composing the Ajax request
 
-Use refs and findDOMNode to get the users inputs.
-
-## 4. Compose the Ajax request
-
-In whatever component you'll want to send the Ajax request from, add a following method:
+In the component you'll want to send the Ajax request from, add a following method:
 
 	sendAjax: function(query, option){
 		$.ajax({
 			// compose the Ajax call
 		});
 	}
+
+You do not need any API key to use the iTunes Search API. Simply send your Ajax request to the following URL:
+
+	https://itunes.apple.com/search?term=QUERY&country=us&entity=CATEGORY
+
+Simply replace QUERY with the search query from the user, and CATEGORY with the correct category the user wants to search through, e.g. movie,music,film,podcast.
 
 
 
