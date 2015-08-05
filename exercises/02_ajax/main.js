@@ -2,22 +2,27 @@ var App = React.createClass({
 	
 	getInitialState: function(){
 		return {
-			response: {}
+			response: []
 		}
 	},
 
 	render: function(){
+		var apps = this.state.response.map(function(app,index){
+			return <li key={index}>{app.trackName}</li>
+		})
 		return (
 			<div>
 			<input type="submit" onClick={this.getApps} />
+			<ul>
+				{apps}
+			</ul>
 			</div>
 		);
 	},
 
-	showApps: function(apps){
-		console.log('apps: ', apps);
+	showApps: function(response){
 		this.setState({
-			response: apps
+			response: response.results
 		})
 	},
 
