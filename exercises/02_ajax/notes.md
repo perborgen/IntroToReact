@@ -10,6 +10,12 @@ Based on this, you'll show the user the most relevant products from iTunes.
 
 To get started, clone this repo. We've linked to the jQuery CDN for you in the HTML file. Your React components ought to be added in main.js.
 
+## Running the app
+
+With some browsers (Safari, Firefox) you can run the app by simply dragging *index.html* into the browser. With Chrome, this won't work. To run it: head over to the directory with your Command Line Interface and run the following command:
+
+	python -m SimpleHTTPServer
+
 ## Breaking the UI into components
 
 Check out this tutorial on how to break you UI into components
@@ -32,7 +38,7 @@ You do not need any API key to use the iTunes Search API. Simply send your Ajax 
 
 	https://itunes.apple.com/search?term=QUERY&country=us&entity=CATEGORY
 
-Simply replace QUERY with the search query from the user, and CATEGORY with the correct category the user wants to search through, e.g. movie,music,film,podcast.
+Replace QUERY with the search query from the user, and CATEGORY with the correct category the user wants to search through, e.g. movie,music,film,podcast.
 
 
 

@@ -64,6 +64,7 @@ var App = React.createClass({
 	},
 
 	showApps: function(response){
+		console.log(response.results);
 		this.setState({
 			searchResult: response.results
 		})
