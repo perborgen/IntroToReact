@@ -17,4 +17,4 @@ Check out this tutorial on how to do this, if you're uncertain.
 ## Stretch goals:
 
 * Enable the user to create multiple lists  
-The user clicks *new list*, and a new list appears on the page, which he/her can add and delete items on.
+The user clicks *New list*, and a new list appears on the page, which he/her can add and delete items on.
