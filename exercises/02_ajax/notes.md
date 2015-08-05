@@ -31,3 +31,14 @@ In whatever component you'll want to send the Ajax request from, add a following
 			// compose the Ajax call
 		});
 	}
+
+
+
+## Stretch goals:
+
+If you finish up early, do the following streatch goals:
+
+* Save feature  
+The ability save items in the search results to another list.
+
+* 
