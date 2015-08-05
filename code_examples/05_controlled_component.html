@@ -10,23 +10,29 @@
         <script type="text/jsx">
 
 
+
 			var App = React.createClass({
 				getInitialState: function(){
 					return {
-						todos: ["get food","drive home","eat food", "sleep"] 
+						text: ''
 					}
 				},
 
+				handleChange: function(event){
+					this.setState({
+						text: event.target.value
+					});
+				},	
+
 				render: function(){
-        			var todos = this.state.todos.map(function(todo,index){
-        				return <li key={index}>{todo}</li>
-        			});				
-        			return (
+					console.log('this.state.text: ', this.state.text);
+					return (
 						<div>
-							<h1> Welcome to the ToDo list!</h1>
-							<ul>
-								{todos}		
-							</ul>
+							<h1>A controlled component!</h1>
+							<input 
+								type="text"
+								value={this.state.text}
+								onChange={this.handleChange} />
 						</div>
 					);
 				}
