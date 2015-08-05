@@ -24,7 +24,24 @@ Before you start coding, you'll want to break the UI into components. Check out 
 
 ## Fetch the users inputs
 
-Use *refs* and *React.findDOMNode* to get the users inputs. Check a code sample using this technique here.
+You'll need to fetch what query and category the user wants to search for. To do this, use *refs* and *React.findDOMNode*. Check a code sample using this technique here. Here is an example on how to use the two functions.
+
+	var App = React.createClass({
+		handleSubmit: function(){
+			var query = React.findDOMNode(this.refs.query).value;
+		},
+		render: function(){
+			return(
+				<div>
+				<input 
+					type="text" 
+					ref="query" />
+				<input 
+					type"submit" 
+					onClick={this.handleClick} />
+			);
+		},
+	});
 
 ## Composing the Ajax request
 
