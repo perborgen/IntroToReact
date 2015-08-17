@@ -4,11 +4,11 @@ This exercise will teach you how to create a simple Todo app using React. You'll
 
 To get started, clone this repo, and follow the instructions below:
 
-## 1. Break the UI into components
+## Breaking the UI into components
 
 Check out this tutorial on how to do this, if you're uncertain.
 
-## 2. Code a static version
+
 
 ## 3. Fetch the users input
 

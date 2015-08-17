@@ -19,22 +19,19 @@
 					);
 				}
 			});
-
-			var Main = React.createClass({
-
+			
+			var App = React.createClass({
 				getInitialState: function(){
 					return {
 						counter: 0
 					}
 				},
-
 				onUserClick: function(){
 					var newCount = this.state.counter += 1;
 					this.setState({
 						counter: newCount
 					});
 				},
-
 				render: function(){
 					return (
 						<div>
@@ -45,7 +42,7 @@
 				}
 			});
 
-			React.render(<Main />,  document.getElementById("content"));
+			React.render(<App />,  document.getElementById("content"));
 
 
 

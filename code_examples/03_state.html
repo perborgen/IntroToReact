@@ -10,34 +10,34 @@
         <script src="http://fb.me/JSXTransformer-0.12.1.js"></script>
         <script type="text/jsx">
 
-			var Main = React.createClass({
+var App = React.createClass({
 
-				getInitialState: function(){
-					return {
-						active: true
-					}
-				},
+	getInitialState: function(){
+		return {
+			active: true
+		}
+	},
 
-				handleClick: function(){
-					this.setState({
-						active: !this.state.active
-					});
-				},
-				
-				render: function(){
-					var buttonSwitch = this.state.active ? "On" : "Off";
+	handleClick: function(){
+		this.setState({
+			active: !this.state.active
+		});
+	},
+	
+	render: function(){
+		var buttonSwitch = this.state.active ? "On" : "Off";
 
-					return (
-						<div>
-							<h1> Welcome to my button app!</h1>
-							<input type="submit" onClick={this.handleClick} />
-							<p>{buttonSwitch}</p>
-						</div>
-					);
-				}
-			});
+		return (
+			<div>
+				<h1>Welcome to the button app</h1>
+				<input type="submit" onClick={this.handleClick} />
+				<p>{buttonSwitch}</p>
+			</div>
+		);
+	}
+});
 
-			React.render(<Main />,  document.getElementById("content"));
+React.render(<App />,  document.getElementById("content"));
 
         </script>
 

@@ -9,31 +9,32 @@
         <script src="http://fb.me/JSXTransformer-0.12.1.js"></script>
         <script type="text/jsx">
 
-			var ButtonForm = React.createClass({
-				render: function(){
-					return (
-						<div>
-							<h3>{this.props.text}</h3>
-							<input type="submit" />
-						</div>
-					);
-				}
-			});
 
-			var App = React.createClass({
-				render: function(){
-					return (
-						<div>
-							<h1> Welcome to my button app!</h1>
-							<ButtonForm text={this.props.text} />
-						</div>
-					);
-				}
-			});
-			
-			var buttonText = "Click the damn button";
+var ButtonForm = React.createClass({
+	render: function(){
+		return (
+			<div>
+				<h3>{this.props.text}</h3>
+				<input type="submit" />
+			</div>
+		);
+	}
+});
 
-			React.render(<App text={buttonText} />,  document.getElementById("content"));
+var App = React.createClass({
+	render: function(){
+		return (
+			<div>
+				<h1> Welcome to my button app!</h1>
+				<ButtonForm text={this.props.text} />
+			</div>
+		);
+	}
+});
+
+var buttonText = "Click the button";
+
+React.render(<App text={buttonText} />,  document.getElementById("content"));
 
         </script>
 </html>
